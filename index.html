@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sod Chinha</title>
+    <meta
+      name="description"
+      content="This app is a meditation tool for devotees of Lord Swaminarayan. It helps devotees focus on the sixteen divine symbols present in pious feet of Lord Swaminarayan."
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/public/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/public/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/public/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/public/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/public/android-chrome-512x512.png"
+    />
+    <link
+      rel="mask-icon"
+      href="/public/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="./css/output.css" />
+    <script src="js/index.js" type="module"></script>
+  </head>
+
+  <body class="h-full">
+    <nav class="fixed top-0 w-full flex items-center justify-end z-10">
+      <ul class="flex items-center">
+        <li>
+          <button
+            aria-label="Change Theme Button"
+            title="Change Theme"
+            type="button"
+            id="theme-btn"
+            class="grid place-items-center relative outline-offset-2 h-10 w-10 rounded invisible active:scale-75"
+          >
+            <svg
+              id="light"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="absolute transition-transform will-change-transform feather feather-sun"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg
+              id="dark"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="absolute transition-transform will-change-transform feather feather-moon"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </li>
+        <li class="ml-1 relative">
+          <button
+            aria-label="Change Language Button"
+            title="Change Language"
+            id="language_btn"
+            type="button"
+            class="outline-offset-2 h-10 w-10 grid place-items-center active:scale-75 transition-transform duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-globe"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="language_picker_container"
+            class="language-picker-container absolute bg-white rounded isolate mt-2 right-0 shadow-xl w-max scale-0 -translate-x-1 origin-[90%_-10%] transition-transform before:absolute before:h-3 before:w-3 before:bg-inherit before:right-0 before:-translate-x-2.5 before:-translate-y-full"
+          >
+            <p
+              class="font-bold text-base my-2 px-2 pb-2 border-b border-gray-200"
+            >
+              Select Language
+            </p>
+            <ul
+              id="language_list"
+              class="px-2 [&>li]:flex [&>li]:items-center [&>li]:mb-2"
+            >
+              <li>
+                <input
+                  type="radio"
+                  name="language"
+                  id="en"
+                  value="en"
+                  checked
+                />
+                <label for="en" class="ml-2 cursor-pointer">English</label>
+              </li>
+              <li>
+                <input type="radio" name="language" id="guj" value="guj" />
+                <label for="guj" class="ml-2 cursor-pointer">ગુજરાતી</label>
+              </li>
+              <li>
+                <input type="radio" name="language" id="hin" value="hin" />
+                <label for="hin" class="ml-2 cursor-pointer">हिंदी</label>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <main
+      class="h-full transition-colors duration-300 ease-in will-change-auto"
+      id="app-container"
+    >
+      <div class="h-full flex flex-col justify-center">
+        <h3
+          id="active_chinh_text"
+          class="text-white text-center font-semibold tracking-wide text-2xl drop-shadow"
+          style="opacity: 0"
+        >
+          &nbsp;
+        </h3>
+        <div
+          class="relative h-[80vh] w-full [&>picture]:will-change-[opacity] [&>picture]:h-full [&>picture]:absolute [&>picture]:inset-0 [&>picture_img]:h-full [&>picture_img]:-mt-8 md:[&>picture_img]:-mt-4 [&>picture_img]:mx-auto [&>picture_img]:object-contain"
+        >
+          <picture>
+            <source type="image/avif" srcset="./assets/main.avif 1x" />
+            <source type="image/webp" srcset="./assets/main.webp 1x" />
+            <img src="./assets/main.png" alt="charnarvind" />
+          </picture>
+          <picture id="matsya" class="hide">
+            <source type="image/avif" srcset="./assets/matsya.avif 1x" />
+            <source type="image/webp" srcset="./assets/matsya.webp 1x" />
+            <img src="./assets/matsya.png" alt="matsya" />
+          </picture>
+          <picture id="trikon" class="hide">
+            <source type="image/avif" srcset="./assets/trikon.avif 1x" />
+            <source type="image/webp" srcset="./assets/trikon.webp 1x" />
+            <img src="./assets/trikon.png" alt="trikon" />
+          </picture>
+          <picture id="l_urdhvarekha" class="hide">
+            <source type="image/avif" srcset="./assets/l_urdhvarekha.avif 1x" />
+            <source type="image/webp" srcset="./assets/l_urdhvarekha.webp 1x" />
+            <img src="./assets/l_urdhvarekha.png" alt="left urdhvarekha" />
+          </picture>
+          <picture id="dhanush" class="hide">
+            <source type="image/avif" srcset="./assets/dhanush.avif 1x" />
+            <source type="image/webp" srcset="./assets/dhanush.webp 1x" />
+            <img src="./assets/dhanush.png" alt="dhanush" />
+          </picture>
+          <picture id="gopad" class="hide">
+            <source type="image/avif" srcset="./assets/gopad.avif 1x" />
+            <source type="image/webp" srcset="./assets/gopad.webp 1x" />
+            <img src="./assets/gopad.png" alt="gopad" loading="lazy" />
+          </picture>
+          <picture id="vyom" class="hide">
+            <source type="image/avif" srcset="./assets/vyom.avif 1x" />
+            <source type="image/webp" srcset="./assets/vyom.webp 1x" />
+            <img src="./assets/vyom.png" alt="vyom" loading="lazy" />
+          </picture>
+          <picture id="ardhachandra" class="hide">
+            <source type="image/avif" srcset="./assets/ardhachandra.avif 1x" />
+            <source type="image/webp" srcset="./assets/ardhachandra.webp 1x" />
+            <img
+              src="./assets/ardhachandra.png"
+              alt="ardhachandra"
+              loading="lazy"
+            />
+          </picture>
+          <picture id="kadash" class="hide">
+            <source type="image/avif" srcset="./assets/kadash.avif 1x" />
+            <source type="image/webp" srcset="./assets/kadash.webp 1x" />
+            <img src="./assets/kadash.png" alt="kadash" loading="lazy" />
+          </picture>
+          <picture id="jambu" class="hide">
+            <source type="image/avif" srcset="./assets/jambu.avif 1x" />
+            <source type="image/webp" srcset="./assets/jambu.webp 1x" />
+            <img src="./assets/jambu.png" alt="jambu" loading="lazy" />
+          </picture>
+          <picture id="jav" class="hide">
+            <source type="image/avif" srcset="./assets/jav.avif 1x" />
+            <source type="image/webp" srcset="./assets/jav.webp 1x" />
+            <img src="./assets/jav.png" alt="jav" loading="lazy" />
+          </picture>
+          <picture id="vraj" class="hide">
+            <source type="image/avif" srcset="./assets/vraj.avif 1x" />
+            <source type="image/webp" srcset="./assets/vraj.webp 1x" />
+            <img src="./assets/vraj.png" alt="vraj" loading="lazy" />
+          </picture>
+          <picture id="r_urdhvarekha" class="hide">
+            <source type="image/avif" srcset="./assets/r_urdhvarekha.avif 1x" />
+            <source type="image/webp" srcset="./assets/r_urdhvarekha.webp 1x" />
+            <img
+              src="./assets/r_urdhvarekha.png"
+              alt="right urdhvarekha"
+              loading="lazy"
+            />
+          </picture>
+          <picture id="dhwaj" class="hide">
+            <source type="image/avif" srcset="./assets/dhwaj.avif 1x" />
+            <source type="image/webp" srcset="./assets/dhwaj.webp 1x" />
+            <img src="./assets/dhwaj.png" alt="dhwaj" loading="lazy" />
+          </picture>
+          <picture id="kamal" class="hide">
+            <source type="image/avif" srcset="./assets/kamal.avif 1x" />
+            <source type="image/webp" srcset="./assets/kamal.webp 1x" />
+            <img src="./assets/kamal.png" alt="kamal" loading="lazy" />
+          </picture>
+          <picture id="ankush" class="hide">
+            <source type="image/avif" srcset="./assets/ankush.avif 1x" />
+            <source type="image/webp" srcset="./assets/ankush.webp 1x" />
+            <img src="./assets/ankush.png" alt="ankush" loading="lazy" />
+          </picture>
+          <picture id="ashtakon" class="hide">
+            <source type="image/avif" srcset="./assets/ashtakon.avif 1x" />
+            <source type="image/webp" srcset="./assets/ashtakon.webp 1x" />
+            <img src="./assets/ashtakon.png" alt="ashtakon" loading="lazy" />
+          </picture>
+          <picture id="swastik" class="hide">
+            <source type="image/avif" srcset="./assets/swastik.avif 1x" />
+            <source type="image/webp" srcset="./assets/swastik.webp 1x" />
+            <img src="./assets/swastik.png" alt="swastik" loading="lazy" />
+          </picture>
+        </div>
+      </div>
+      <div class="flex flex-col items-center fixed bottom-5 right-10">
+        <div class="flex items-center flex-wrap justify-center mb-3">
+          <span
+            id="mantra_count"
+            class="text-center text-white font-normal"
+          ></span>
+          <span
+            id="mada_count"
+            class="ml-1 text-center text-white font-normal"
+          ></span>
+        </div>
+        <button
+          aria-label="Change Chinh"
+          title="Change Chinh"
+          type="button"
+          id="change_chinh"
+          class="pushable relative w-[calc(180/16*1rem)] h-[calc(44/16*1rem)] border-none bg-transparent p-0 cursor-pointer outline-offset-4 transition-[filter] duration-[250ms]"
+        >
+          <span
+            class="shadow absolute top-0 left-0 w-full h-full rounded-xl will-change-transform translate-y-0.5"
+          ></span>
+          <span
+            class="edge absolute top-0 left-0 w-full h-full rounded-xl"
+          ></span>
+          <span
+            id="btn-text"
+            class="front block py-2 px-8 rounded-xl text-lg -translate-y-1 will-change-transform font-normal text-white"
+          ></span>
+        </button>
+        <button
+          aria-label="Reset Count"
+          title="Reset Count"
+          id="reset_count_btn"
+          class="reset-btn invisible mt-2 text-sm font-normal"
+        ></button>
+      </div>
+    </main>
+    <div
+      id="sw_update_container"
+      class="fixed top-0 left-0 right-0 w-fit max-w-[75%] z-10 mx-auto bg-white p-2 rounded-sm shadow-lg -translate-y-full transition-transform"
+    >
+      <p id="sw_update_txt" class="text-center font-medium">
+        New update available, Click on Reload button to update.
+      </p>
+      <button
+        id="sw_update_refresh_btn"
+        type="button"
+        title="Refresh Page"
+        aria-label="Refresh Page"
+        class="px-2 py-1 block mx-auto mt-2 bg-[#516be9] text-white rounded text-sm"
+      >
+        Reload
+      </button>
+    </div>
+  </body>
+</html>
