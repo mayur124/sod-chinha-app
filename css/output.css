@@ -1061,22 +1061,6 @@ main img {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-foreground: rgba(56, 51, 95, 0.7);
-    --image-filter: saturate(0.6);
-    --btn-bg: rgb(128, 61, 164);
-    --btn-edge-bg: linear-gradient(
-      to left,
-      rgb(57, 52, 96) 0%,
-      rgb(84, 57, 127) 8%,
-      rgb(84, 57, 127) 92%,
-      rgb(57, 52, 96) 100%
-    );
-    --reset-btn-color: rgb(255, 255, 255);
-  }
-}
-
 main.dark {
   --bg-foreground: rgba(56, 51, 95, 0.7);
   --image-filter: saturate(0.6)
