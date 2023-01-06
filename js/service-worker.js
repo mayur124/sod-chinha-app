@@ -15,7 +15,7 @@ if ("serviceWorker" in navigator) {
         e.stopPropagation();
         updateSw();
       });
-      swUpdateContainer.classList.remove("-translate-y-full");
+      swUpdateContainer.classList.remove("-translate-y-[110%]");
     },
   });
 }
