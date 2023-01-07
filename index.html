@@ -33,7 +33,7 @@
 
   <body class="h-full">
     <main
-      class="h-full transition-colors duration-300 ease-in will-change-[background-image] grid grid-rows-[2.5rem_calc(100vh-(2.5rem+6.75rem))_6.75rem]"
+      class="h-full transition-colors duration-300 ease-in will-change-[background-image] grid grid-rows-[2.5rem_calc(100vh-(2.5rem+6.75rem))_6.75rem] landscape:grid-rows-[2.5rem_calc(100vh-4rem)]"
       id="app-container"
     >
       <nav class="w-full flex items-center justify-end z-10">
@@ -160,7 +160,7 @@
           &nbsp;
         </h3>
         <div
-          class="relative h-[80vh] w-full [&>picture]:will-change-[opacity] [&>picture]:h-full [&>picture]:absolute [&>picture]:inset-0 [&>picture_img]:h-full [&>picture_img]:mx-auto [&>picture_img]:object-contain"
+          class="relative h-full w-full [&>picture]:will-change-[opacity] [&>picture]:h-full [&>picture]:absolute [&>picture]:inset-0 [&>picture_img]:h-full [&>picture_img]:mx-auto [&>picture_img]:object-contain [&>picture_img]:object-top"
         >
           <picture>
             <source type="image/avif" srcset="./assets/main.avif 1x" />
@@ -262,8 +262,8 @@
           </picture>
         </div>
       </div>
-      <div class="flex justify-end mr-4 -mt-2">
-        <div class="flex flex-col items-center right-10">
+      <div class="flex justify-end -mt-1 landscape:fixed landscape:bottom-1.5 landscape:right-0">
+        <div class="flex flex-col items-center mr-4">
           <div class="flex items-center flex-wrap justify-center mb-3">
             <span
               id="mantra_count"
@@ -279,14 +279,14 @@
             title="Change Chinh"
             type="button"
             id="change_chinh"
-            class="pushable relative w-[calc(180/16*1rem)] h-[calc(44/16*1rem)] border-none bg-transparent p-0 cursor-pointer outline-offset-4 transition-[filter] duration-[250ms]"
+            class="pushable block relative w-[calc(180/16*1rem)] h-[calc(44/16*1rem)] border-none p-0 m-0 bg-transparent cursor-pointer outline-offset-4 hover:brightness-110 transition-[filter] duration-[250ms]"
           >
             <span
-              class="shadow absolute top-0 left-0 w-full h-full rounded-xl will-change-transform translate-y-0.5"
-            >&nbsp;</span>
+              class="shadow block absolute w-full h-full rounded-xl will-change-transform translate-y-0.5"
+            ></span>
             <span
-              class="edge absolute top-0 left-0 w-full h-full rounded-xl"
-            >&nbsp;</span>
+              class="edge block absolute w-full h-full rounded-xl"
+            ></span>
             <span
               id="btn-text"
               class="front block py-2 px-8 rounded-xl text-lg -translate-y-1 will-change-transform font-normal text-white"

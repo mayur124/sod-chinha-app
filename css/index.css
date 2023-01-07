@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+}
+
 :root {
   --bg-foreground: rgba(255, 185, 68, 0.7);
   --bg-background: rgb(255, 246, 234);
@@ -51,19 +56,16 @@ main img {
 
 .shadow {
   background: rgba(0, 0, 0, 0.25);
-  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: all 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 .edge {
   background: var(--btn-edge-bg);
 }
 .front {
   background: var(--btn-bg);
-  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: all 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 
-.pushable:hover {
-  filter: brightness(110%);
-}
 .pushable:hover .front {
   transform: translateY(-6px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
