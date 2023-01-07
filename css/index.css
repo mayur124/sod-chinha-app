@@ -5,6 +5,7 @@
 * {
   margin: 0px;
   -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
 }
 
 :root {
