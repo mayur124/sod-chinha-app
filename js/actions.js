@@ -4,6 +4,10 @@ import { state } from "./state";
 
 export const changeChinhBtn = document.getElementById("change_chinh");
 setChangeChinhText();
+/** @type HTMLElement */
+const btnShadowEl = changeChinhBtn.querySelector(".shadow"),
+  /** @type HTMLElement */
+  btnTxtEl = changeChinhBtn.querySelector("#btn-text");
 const chinhTextEl = document.getElementById("active_chinh_text");
 const mantraCountEl = document.getElementById("mantra_count");
 const madaCountEl = document.getElementById("mada_count");
@@ -16,6 +20,16 @@ changeChinhBtn.addEventListener("click", () => {
   showResetCountBtnSafe();
   setCount();
 });
+
+changeChinhBtn.ontouchstart = () => {
+  btnShadowEl.style.transform = "translateY(0.0625rem)"; // 1px
+  btnTxtEl.style.transform = "translateY(-0.125rem)"; // -2px
+};
+
+changeChinhBtn.ontouchend = () => {
+  btnShadowEl.style.transform = "translateY(0.125rem)"; // 2px
+  btnTxtEl.style.transform = "translateY(-0.25rem)"; // -4px
+};
 
 function resetAllChinhs() {
   for (const chinh in chinhMeta) {
