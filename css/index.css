@@ -30,7 +30,7 @@ button {
 
 main {
   background-color: var(--bg-foreground);
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
       circle at center,
       var(--bg-background),
       var(--bg-foreground)
@@ -42,7 +42,12 @@ main {
       35px,
       transparent 80px,
       transparent 35px
-    );
+    ); */
+  background-image: radial-gradient(
+    circle at center,
+    var(--bg-background),
+    var(--bg-foreground)
+  );
   background-blend-mode: multiply;
 }
 
@@ -131,6 +136,14 @@ main img {
   animation: popIn 500ms ease-in-out forwards;
 }
 
+.rotateSun {
+  animation: rotateSun 500ms cubic-bezier(0, 0.12, 0.46, 1.34) forwards;
+}
+
+.rotateMoon {
+  animation: rotateMoon 500ms cubic-bezier(0, 0.12, 0.46, 1.34) forwards;
+}
+
 @keyframes popOut {
   0% {
     transform: rotate(-90deg) scale(0);
@@ -146,6 +159,24 @@ main img {
   }
   to {
     transform: rotate(90deg) scale(0);
+  }
+}
+
+@keyframes rotateSun {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateMoon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(120deg);
   }
 }
 

@@ -22,13 +22,13 @@ changeChinhBtn.addEventListener("click", () => {
 });
 
 changeChinhBtn.ontouchstart = () => {
-  btnShadowEl.style.transform = "translateY(0.0625rem)"; // 1px
-  btnTxtEl.style.transform = "translateY(-0.125rem)"; // -2px
+  btnShadowEl.style.transform = `translateY(${0/ 16}rem)`;
+  btnTxtEl.style.transform = `translateY(${-1 / 16}rem)`;
 };
 
 changeChinhBtn.ontouchend = () => {
-  btnShadowEl.style.transform = "translateY(0.125rem)"; // 2px
-  btnTxtEl.style.transform = "translateY(-0.25rem)"; // -4px
+  btnShadowEl.style.transform = `translateY(${2 / 16}rem)`;
+  btnTxtEl.style.transform = `translateY(${-4 / 16}rem)`;
 };
 
 function resetAllChinhs() {
