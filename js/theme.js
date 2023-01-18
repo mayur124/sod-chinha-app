@@ -45,8 +45,8 @@ function animateSunCircleLight() {
 
 function animateSunDotLight(dotEl) {
   const r = +dotEl.getAttribute("r");
-  dotEl.setAttribute("r", Math.min(1.0, +(r + 0.1).toFixed(2)));
-  if (r.toFixed(2) === "1.00") return;
+  dotEl.setAttribute("r", Math.min(1.5, +(r + 0.05).toFixed(2)));
+  if (r.toFixed(2) === "1.50") return;
   requestAnimationFrame(() => animateSunDotLight(dotEl));
 }
 

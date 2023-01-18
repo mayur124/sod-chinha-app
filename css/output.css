@@ -879,8 +879,8 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.transition-colors {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+.transition-\[background\] {
+  transition-property: background;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -897,6 +897,10 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -909,8 +913,12 @@ video {
   transition-duration: 400ms;
 }
 
-.duration-300 {
-  transition-duration: 300ms;
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.will-change-\[background\] {
+  will-change: background;
 }
 
 .will-change-transform {
@@ -927,8 +935,16 @@ video {
 }
 
 :root {
-  --bg-foreground: rgba(255, 185, 68, 0.7);
-  --bg-background: rgb(255, 246, 234);
+  --bg-gradient: radial-gradient(
+    circle at 50% 50%,
+    #ffe3bd,
+    #ffdfb2,
+    #ffd497,
+    #ffc774,
+    #ffb950,
+    #ffae30,
+    #ffa91f
+  );
   --image-filter: drop-shadow(2px 4px 6px rgba(238, 238, 238, 0.667));
   --btn-bg: rgb(240, 0, 60);
   --btn-edge-bg: linear-gradient(
@@ -946,26 +962,7 @@ button {
 }
 
 main {
-  background-color: var(--bg-foreground);
-  /* background-image: radial-gradient(
-      circle at center,
-      var(--bg-background),
-      var(--bg-foreground)
-    ),
-    repeating-radial-gradient(
-      circle at center,
-      var(--bg-background),
-      var(--bg-background),
-      35px,
-      transparent 80px,
-      transparent 35px
-    ); */
-  background-image: radial-gradient(
-    circle at center,
-    var(--bg-background),
-    var(--bg-foreground)
-  );
-  background-blend-mode: multiply;
+  background: var(--bg-gradient);
 }
 
 main img {
@@ -1110,8 +1107,18 @@ main img {
 
 @media (prefers-color-scheme: dark) {
   main.dark {
-    --bg-foreground: rgba(56, 51, 95, 0.7);
-    --image-filter: saturate(0.6);
+    --bg-gradient: radial-gradient(
+      circle at 50% 50%,
+      #ffe3bd,
+      #f7d2b1,
+      #e0aa98,
+      #b77a84,
+      #815375,
+      #4f3b66,
+      #38335f
+    );
+    --image-filter: saturate(0.85)
+      drop-shadow(2px 4px 6px rgba(238, 238, 238, 0.667));
     --btn-bg: rgb(128, 61, 164);
     --btn-edge-bg: linear-gradient(
       to left,
@@ -1125,8 +1132,17 @@ main img {
 }
 
 main.dark {
-  --bg-foreground: rgba(56, 51, 95, 0.7);
-  --image-filter: saturate(0.6)
+  --bg-gradient: radial-gradient(
+    circle at 50% 50%,
+    #ffe3bd,
+    #f7d2b1,
+    #e0aa98,
+    #b77a84,
+    #815375,
+    #4f3b66,
+    #38335f
+  );
+  --image-filter: saturate(0.85)
     drop-shadow(2px 4px 6px rgba(238, 238, 238, 0.667));
   --btn-bg: rgb(128, 61, 164);
   --btn-edge-bg: linear-gradient(
