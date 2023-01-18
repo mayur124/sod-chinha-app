@@ -533,10 +533,6 @@ video {
   position: relative;
 }
 
-.left-1\/2 {
-  left: 50%;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -631,22 +627,6 @@ video {
   height: calc(44 / 16 * 1rem);
 }
 
-.max-h-\[calc\(100\%-\(2\.5rem\+6\.75rem\)\)\] {
-  max-height: calc(100% - (2.5rem + 6.75rem));
-}
-
-.max-h-\[calc\(100\%-\(2\.5rem\+7\.75rem\)\)\] {
-  max-height: calc(100% - (2.5rem + 7.75rem));
-}
-
-.max-h-\[calc\(100\%-\(2\.5rem\+8rem\)\)\] {
-  max-height: calc(100% - (2.5rem + 8rem));
-}
-
-.max-h-\[calc\(100\%-\(2\.5rem\+8\.5rem\)\)\] {
-  max-height: calc(100% - (2.5rem + 8.5rem));
-}
-
 .max-h-\[calc\(100\%-\(2\.5rem\+9rem\)\)\] {
   max-height: calc(100% - (2.5rem + 9rem));
 }
@@ -679,11 +659,6 @@ video {
 
 .origin-\[90\%_-10\%\] {
   transform-origin: 90% -10%;
-}
-
-.-translate-x-1\/2 {
-  --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .-translate-x-1 {
@@ -824,24 +799,9 @@ video {
   text-align: center;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .text-2xl {
@@ -849,12 +809,22 @@ video {
   line-height: 2rem;
 }
 
-.font-semibold {
-  font-weight: 600;
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .font-normal {
@@ -927,10 +897,6 @@ video {
   transition-duration: 150ms;
 }
 
-.duration-300 {
-  transition-duration: 300ms;
-}
-
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -943,12 +909,8 @@ video {
   transition-duration: 400ms;
 }
 
-.ease-in {
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-
-.will-change-\[background-image\] {
-  will-change: background-image;
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 .will-change-transform {
@@ -1248,25 +1210,6 @@ main.dark {
   align-items: center;
 }
 
-.\[\&\>picture\]\:absolute>picture {
-  position: absolute;
-}
-
-.\[\&\>picture\]\:inset-0>picture {
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
-.\[\&\>picture\]\:h-full>picture {
-  height: 100%;
-}
-
-.\[\&\>picture\]\:will-change-\[opacity\]>picture {
-  will-change: opacity;
-}
-
 .\[\&\>picture_img\]\:mx-auto>picture img {
   margin-left: auto;
   margin-right: auto;
@@ -1284,4 +1227,23 @@ main.dark {
 .\[\&\>picture_img\]\:object-top>picture img {
   -o-object-position: top;
      object-position: top;
+}
+
+.\[\&\>picture\]\:absolute>picture {
+  position: absolute;
+}
+
+.\[\&\>picture\]\:inset-0>picture {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.\[\&\>picture\]\:h-full>picture {
+  height: 100%;
+}
+
+.\[\&\>picture\]\:will-change-\[opacity\]>picture {
+  will-change: opacity;
 }
