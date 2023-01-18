@@ -6,6 +6,7 @@
   margin: 0px;
   -webkit-font-smoothing: antialiased;
   touch-action: manipulation;
+  user-select: none;
 }
 
 :root {
@@ -25,7 +26,6 @@
 
 button {
   -webkit-tap-highlight-color: transparent;
-  user-select: none;
 }
 
 main {

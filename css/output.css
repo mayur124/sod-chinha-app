@@ -921,6 +921,9 @@ video {
   margin: 0px;
   -webkit-font-smoothing: antialiased;
   touch-action: manipulation;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 :root {
@@ -940,9 +943,6 @@ video {
 
 button {
   -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 
 main {
