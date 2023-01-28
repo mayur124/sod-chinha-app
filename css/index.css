@@ -174,44 +174,19 @@ main img {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  main.dark {
-    --bg-gradient: radial-gradient(
-      circle at 50% 50%,
-      #ffe3bd,
-      #f7d2b1,
-      #e0aa98,
-      #b77a84,
-      #815375,
-      #4f3b66,
-      #38335f
-    );
-    --image-filter: saturate(0.85)
-      drop-shadow(2px 4px 6px rgba(238, 238, 238, 0.667));
-    --btn-bg: rgb(128, 61, 164);
-    --btn-edge-bg: linear-gradient(
-      to left,
-      rgb(57, 52, 96) 0%,
-      rgb(84, 57, 127) 8%,
-      rgb(84, 57, 127) 92%,
-      rgb(57, 52, 96) 100%
-    );
-    --reset-btn-color: rgb(255, 255, 255);
-  }
-}
-
 main.dark {
   --bg-gradient: radial-gradient(
     circle at 50% 50%,
-    #ffe3bd,
-    #f7d2b1,
-    #e0aa98,
-    #b77a84,
-    #815375,
-    #4f3b66,
+    #c2ad90,
+    #b88b7e,
+    #af6c75,
+    #a55a7e,
+    #945088,
+    #784682,
+    #553d71,
     #38335f
   );
-  --image-filter: saturate(0.85)
+  --image-filter: saturate(0.75)
     drop-shadow(2px 4px 6px rgba(238, 238, 238, 0.667));
   --btn-bg: rgb(128, 61, 164);
   --btn-edge-bg: linear-gradient(
