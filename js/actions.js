@@ -21,15 +21,15 @@ changeChinhBtn.addEventListener("click", () => {
   setCount();
 });
 
-changeChinhBtn.ontouchstart = () => {
-  btnShadowEl.style.transform = `translateY(${0/ 16}rem)`;
-  btnTxtEl.style.transform = `translateY(${-1 / 16}rem)`;
-};
+// changeChinhBtn.ontouchstart = () => {
+//   btnShadowEl.style.transform = `translateY(${0/ 16}rem)`;
+//   btnTxtEl.style.transform = `translateY(${-1 / 16}rem)`;
+// };
 
-changeChinhBtn.ontouchend = () => {
-  btnShadowEl.style.transform = `translateY(${2 / 16}rem)`;
-  btnTxtEl.style.transform = `translateY(${-4 / 16}rem)`;
-};
+// changeChinhBtn.ontouchend = () => {
+//   btnShadowEl.style.transform = `translateY(${2 / 16}rem)`;
+//   btnTxtEl.style.transform = `translateY(${-4 / 16}rem)`;
+// };
 
 function resetAllChinhs() {
   for (const chinh in chinhMeta) {

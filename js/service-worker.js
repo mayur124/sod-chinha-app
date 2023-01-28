@@ -17,7 +17,9 @@ if ("serviceWorker" in navigator) {
       });
       swUpdateContainer.classList.remove("-translate-y-[110%]");
     },
-    onOfflineReady() {},
+    onOfflineReady() {
+      alert("App is ready for an offline usage");
+    },
   });
 }
 

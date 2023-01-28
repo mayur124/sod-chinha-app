@@ -45,12 +45,12 @@ function animateSunCircleLight() {
 
 function animateSunDotLight(dotEl) {
   const r = +dotEl.getAttribute("r");
-  dotEl.setAttribute("r", Math.min(1.5, +(r + 0.05).toFixed(2)));
+  dotEl.setAttribute("r", Math.min(1.5, +(r + 0.1).toFixed(2)));
   if (r.toFixed(2) === "1.50") return;
   requestAnimationFrame(() => animateSunDotLight(dotEl));
 }
 
-async function handleTheme() {
+function handleTheme() {
   if (!state.theme || state.theme === "light") {
     state.theme = "dark";
     animateIconMaskCircleDark();
