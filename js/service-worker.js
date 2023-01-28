@@ -1,5 +1,9 @@
 import { registerSW } from "virtual:pwa-register";
-import { refreshSwBtnText, refreshSwText } from "./meta";
+import {
+  offlineNotificationText,
+  refreshSwBtnText,
+  refreshSwText,
+} from "./meta";
 import { state } from "./state";
 
 let updateSw;
@@ -18,7 +22,7 @@ if ("serviceWorker" in navigator) {
       swUpdateContainer.classList.remove("-translate-y-[110%]");
     },
     onOfflineReady() {
-      alert("App is ready for an offline usage");
+      alert(offlineNotificationText[state.selectedLanguage]);
     },
   });
 }

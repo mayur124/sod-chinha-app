@@ -139,3 +139,9 @@ export const refreshSwBtnText = {
   [LANGUAGE.GUJ]: "રીલોડ",
   [LANGUAGE.HIN]: "रीलोड",
 };
+
+export const offlineNotificationText = {
+  [LANGUAGE.EN]: "App is ready for an offline usage.",
+  [LANGUAGE.GUJ]: "એપ્લિકેશન ઑફલાઇન ઉપયોગ માટે તૈયાર છે.",
+  [LANGUAGE.HIN]: "ऐप ऑफ़लाइन उपयोग के लिए तैयार है।",
+}
