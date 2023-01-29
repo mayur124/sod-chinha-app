@@ -75,7 +75,7 @@
               title="Change Theme"
               type="button"
               id="theme-btn"
-              class="grid place-items-center relative outline-offset-2 h-10 w-10 rounded invisible"
+              class="grid place-items-center outline-offset-2 h-10 w-10 rounded invisible"
             >
               <svg
                 id="light"
@@ -85,7 +85,6 @@
                 viewBox="0 0 24 24"
                 fill="#fff"
                 stroke="#fff"
-                style="transform: rotate(120deg)"
               >
                 <mask id="moon-mask">
                   <rect x="0" y="0" width="24" height="24" fill="#fff" />
@@ -100,6 +99,35 @@
                   <circle cx="19" cy="16" r="1.5"></circle>
                   <circle cx="19" cy="8" r="1.5"></circle>
                 </g>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button
+              aria-label="Toggle Volume"
+              title="Toggle Volume"
+              type="button"
+              id="volume-btn"
+              class="grid place-items-center outline-offset-2 h-10 w-10 rounded"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="[&_path]:transition-opacity"
+              >
+                <path
+                  d="M 11 5 L 6 9 L 2 9 L 2 15 L 6 15 L 11 19 Z"
+                  class="fill-white"
+                />
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
               </svg>
             </button>
           </li>
@@ -121,7 +149,6 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="feather feather-globe"
               >
                 <circle cx="12" cy="12" r="10"></circle>
                 <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -173,7 +200,6 @@
       >
         &nbsp;
       </h3>
-      <!-- [&>picture_img]:object-top -->
       <div
         class="relative max-h-[calc(100%-(2.5rem+9rem))] h-full w-full [&>picture]:will-change-[opacity] [&>picture]:h-full [&>picture]:absolute [&>picture]:inset-0 [&>picture_img]:h-full [&>picture_img]:mx-auto [&>picture_img]:object-contain"
       >
@@ -301,7 +327,7 @@
             <span class="edge block absolute w-full h-full rounded-xl"></span>
             <span
               id="btn-text"
-              class="front block py-2 px-8 rounded-xl text-lg -translate-y-1 will-change-transform font-normal text-white"
+              class="front block py-2 px-8 rounded-xl text-lg -translate-y-1 will-change-transform font-normal text-white select-none"
               >&nbsp;</span
             >
           </button>

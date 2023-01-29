@@ -1,9 +1,22 @@
+import tap from "../assets/tap.wav";
+import toggleOn from "../assets/toggle_on.wav";
+import toggleOff from "../assets/toggle_off.wav";
+
 import { setChangeChinhText } from "./language";
 import { chinhMeta, madaText, resetText } from "./meta";
 import { state } from "./state";
 
 export const changeChinhBtn = document.getElementById("change_chinh");
 setChangeChinhText();
+
+const tapAudio = new Audio(tap),
+  soundOnAudio = new Audio(toggleOn),
+  soundOffAudio = new Audio(toggleOff);
+
+const volumeBtnEl = document.getElementById("volume-btn"),
+  volumeSvg = volumeBtnEl.querySelector("svg"),
+  volumePaths = volumeSvg.querySelectorAll("path");
+
 /** @type HTMLElement */
 const btnShadowEl = changeChinhBtn.querySelector(".shadow"),
   /** @type HTMLElement */
@@ -11,18 +24,11 @@ const btnShadowEl = changeChinhBtn.querySelector(".shadow"),
 const chinhTextEl = document.getElementById("active_chinh_text");
 const mantraCountEl = document.getElementById("mantra_count");
 const madaCountEl = document.getElementById("mada_count");
+
 const chinhKeys = Object.keys(chinhMeta);
 
-changeChinhBtn.addEventListener("click", () => {
-  resetAllChinhs();
-  setActiveIndex();
-  handleActiveChinh();
-  showResetCountBtnSafe();
-  setCount();
-});
-
 changeChinhBtn.ontouchstart = () => {
-  btnShadowEl.style.transform = `translateY(${0/ 16}rem)`;
+  btnShadowEl.style.transform = `translateY(${0 / 16}rem)`;
   btnTxtEl.style.transform = `translateY(${-1 / 16}rem)`;
 };
 
@@ -30,6 +36,18 @@ changeChinhBtn.ontouchend = () => {
   btnShadowEl.style.transform = `translateY(${2 / 16}rem)`;
   btnTxtEl.style.transform = `translateY(${-4 / 16}rem)`;
 };
+
+changeChinhBtn.addEventListener("click", () => {
+  if (state.isVolumeOn) {
+    // tapAudioEl.play();
+    tapAudio.play();
+  }
+  resetAllChinhs();
+  setActiveIndex();
+  handleActiveChinh();
+  showResetCountBtnSafe();
+  setCount();
+});
 
 function resetAllChinhs() {
   for (const chinh in chinhMeta) {
@@ -113,3 +131,24 @@ export function renderCount(mantraCount, madaCount) {
     } 📿`;
   }
 }
+
+//#region Volume Actions
+volumeBtnEl.addEventListener("click", () => {
+  state.isVolumeOn = !state.isVolumeOn;
+  if (state.isVolumeOn) {
+    soundOnAudio.play();
+    volumePaths[0].classList.add("volume-on-animation");
+    volumePaths[1].style.opacity = 1;
+    volumePaths[1].style.transitionDelay = "0ms";
+    volumePaths[2].style.opacity = 1;
+    volumePaths[2].style.transitionDelay = "150ms";
+  } else {
+    soundOffAudio.play();
+    volumePaths[0].classList.remove("volume-on-animation");
+    volumePaths[2].style.opacity = 0;
+    volumePaths[2].style.transitionDelay = "0ms";
+    volumePaths[1].style.opacity = 0;
+    volumePaths[1].style.transitionDelay = "150ms";
+  }
+});
+//#endregion

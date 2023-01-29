@@ -10,4 +10,5 @@ export const state = {
    * @type {"light" | "dark"}
    */
   theme: null,
+  isVolumeOn: true,
 };

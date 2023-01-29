@@ -8,8 +8,8 @@ export default defineConfig({
       workbox: { globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,avif}"] },
       includeAssets: ["favicon.ico", "apple-touch-icon.png"],
       manifest: {
-        name: "Sod Chinha Meditation App",
-        short_name: "Sod Chinha",
+        name: "Swaminarayan Pad Chinha Meditation App",
+        short_name: "Pad Chinha",
         description:
           "This app is a meditation tool for devotees of Lord Swaminarayan. It helps devotees focus on the sixteen divine symbols present in pious feet of Lord Swaminarayan.",
         icons: [
@@ -30,4 +30,8 @@ export default defineConfig({
       },
     }),
   ],
+  appType: "spa",
+  build: {
+    assetsInlineLimit: 0,
+  },
 });
