@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [
     VitePWA({
       // registerType: "autoUpdate",
-      workbox: { globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,avif}"] },
+      workbox: { globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,avif,wav}"] },
       includeAssets: ["favicon.ico", "apple-touch-icon.png"],
       manifest: {
         name: "Swaminarayan Pad Chinha Meditation App",

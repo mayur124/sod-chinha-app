@@ -8,7 +8,8 @@
     "build--test": "vite build && node audio-transfer.js",
     "build": "vite build",
     "preview": "vite preview",
-    "tailwind": "npx tailwindcss -i ./css/index.css -o ./css/output.css --watch"
+    "tailwind": "npx tailwindcss -i ./css/index.css -o ./css/output.css --watch",
+    "prod": "npm run build && npm run preview"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
