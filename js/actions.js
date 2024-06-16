@@ -73,8 +73,7 @@ function addGlowEffect() {
 function resetAllChinhs() {
   for (const chinh in chinhMeta) {
     const chinhEl = document.getElementById(chinh);
-    chinhEl.classList.add("hide");
-    chinhEl.style.opacity = 0;
+    chinhEl.classList.remove("active-chinh");
   }
 }
 
@@ -92,7 +91,7 @@ export function handleActiveChinh() {
   const activeChinhEl = document.getElementById(
     chinhKeys[state.activeChinhIdx]
   );
-  activeChinhEl.style.opacity = 1;
+  activeChinhEl.classList.add("active-chinh");
   // prettier-ignore
   chinhTextEl.textContent = chinhMeta[chinhKeys[state.activeChinhIdx]][state.selectedLanguage];
   if (chinhTextEl.classList.contains("textAnimation")) {

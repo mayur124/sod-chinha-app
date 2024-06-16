@@ -25,16 +25,6 @@
     #ffae30,
     #ffa91f
   );
-  --image-filter: drop-shadow(2px 4px 6px rgba(238, 238, 238, 0.667));
-  --btn-bg: rgb(240, 0, 60);
-  --btn-edge-bg: linear-gradient(
-    to left,
-    rgb(82, 0, 27) 0%,
-    rgb(163, 0, 54) 8%,
-    rgb(163, 0, 54) 92%,
-    rgb(82, 0, 27) 100%
-  );
-  --reset-btn-color: rgb(31, 41, 55);
   --glow-gradient: radial-gradient(
     circle at 50% 50%,
     #f0003c,
@@ -46,6 +36,55 @@
     #ff9d1c,
     #ffa91f
   );
+  --btn-edge-bg: linear-gradient(
+    to left,
+    #52001b 0%,
+    #a30036 8%,
+    #a30036 92%,
+    #52001b 100%
+  );
+  --stroke-color: #ba3b0d;
+  --btn-bg: #f0003c;
+  --reset-btn-color: #1f2937;
+  --active-path-color: #ffffff;
+  --active-chinh-filter: drop-shadow(0px 0px 2px var(--active-path-color));
+}
+
+main.dark {
+  --bg-gradient: radial-gradient(
+    circle at 50% 50%,
+    #c2ad90,
+    #b88b7e,
+    #af6c75,
+    #a55a7e,
+    #945088,
+    #784682,
+    #553d71,
+    #38335f
+  );
+  --glow-gradient: radial-gradient(
+    circle at 50% 50%,
+    #803da4,
+    #8e40a7,
+    #b047ad,
+    #b6588f,
+    #b96c7a,
+    #bd8b7e,
+    #c1a48b,
+    #c2ad90
+  );
+  --btn-edge-bg: linear-gradient(
+    to left,
+    #393460 0%,
+    #54397f 8%,
+    #54397f 92%,
+    #393460 100%
+  );
+  --stroke-color: #ffffff;
+  --btn-bg: #803da4;
+  --reset-btn-color: #ffffff;
+  --active-path-color: #ffd900;
+  --active-chinh-filter: drop-shadow(0px 0px 2px var(--active-path-color));
 }
 
 button {
@@ -56,17 +95,13 @@ main {
   background: var(--bg-gradient);
 }
 
-main img {
-  filter: var(--image-filter);
-}
-
 .hide {
   opacity: 0;
   transition: opacity 300ms ease-out;
 }
 
 .shadow {
-  background: rgba(0, 0, 0, 0.25);
+  background: #00000040;
   transition: all 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 .edge {
@@ -185,42 +220,6 @@ main img {
   }
 }
 
-main.dark {
-  --bg-gradient: radial-gradient(
-    circle at 50% 50%,
-    #c2ad90,
-    #b88b7e,
-    #af6c75,
-    #a55a7e,
-    #945088,
-    #784682,
-    #553d71,
-    #38335f
-  );
-  --image-filter: saturate(0.75)
-    drop-shadow(2px 4px 6px rgba(238, 238, 238, 0.667));
-  --btn-bg: rgb(128, 61, 164);
-  --btn-edge-bg: linear-gradient(
-    to left,
-    rgb(57, 52, 96) 0%,
-    rgb(84, 57, 127) 8%,
-    rgb(84, 57, 127) 92%,
-    rgb(57, 52, 96) 100%
-  );
-  --reset-btn-color: rgb(255, 255, 255);
-  --glow-gradient: radial-gradient(
-    circle at 50% 50%,
-    #803da4,
-    #8e40a7,
-    #b047ad,
-    #b6588f,
-    #b96c7a,
-    #bd8b7e,
-    #c1a48b,
-    #c2ad90
-  );
-}
-
 .language-picker-container::before {
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
@@ -279,4 +278,26 @@ main.dark {
   100% {
     background-position: 400% 0;
   }
+}
+
+.charnarvind-svg {
+  filter: drop-shadow(0px 0px 4px var(--stroke-color));
+}
+
+.charan-path {
+  stroke-width: 2px;
+}
+
+.chinha-path {
+  stroke: var(--stroke-color);
+  fill-opacity: 0;
+}
+
+.active-chinh path {
+  stroke: var(--active-path-color);
+  transition: stroke 300ms ease-in;
+}
+
+.circle-stroke-width-fix {
+  stroke-width: 8px;
 }
